@@ -1,0 +1,39 @@
+{
+    "productName": "CapacitorSolidTest",
+    "appId": "com.capsolidtest.app",
+  
+    "directories": {
+      "buildResources": "buildResources",
+      "output": "release"
+    },
+  
+    "files": ["./electron/src/", "./electron/node_modules/", "./electron/package.json"],
+  
+    "mac": {
+      "target": ["dmg", "zip"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "linux": {
+      "target": ["AppImage"],
+      "artifactName": "${productName}-${version}-${os}.${ext}"
+    },
+    "dmg": {
+      "title": "${productName}-${version}",
+      "contents": [
+        {
+          "x": 300,
+          "y": 360
+        },
+        {
+          "x": 490,
+          "y": 360,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  }
